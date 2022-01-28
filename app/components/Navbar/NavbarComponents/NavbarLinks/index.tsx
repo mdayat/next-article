@@ -13,7 +13,6 @@ const NavbarLinks = ({
   liClassName = "",
   btnClassName = "",
 }: NavbarLinksProps) => {
-  console.log("Render Links Compoenent");
   return (
     <ul className={ulClassName}>
       <li className={liClassName}>

@@ -1,13 +1,12 @@
-import { NavbarBrand } from "../NavbarBrand";
 import { NavbarLinks } from "../NavbarLinks";
 
 const MemoizedNavbar = () => {
   console.log("Render Memo");
   return (
     <>
-      <NavbarBrand className="font-bold uppercase font-patrickHand sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-6xl">
+      <h1 className="font-bold uppercase font-patrickHand sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-6xl">
         Company
-      </NavbarBrand>
+      </h1>
       <NavbarLinks
         ulClassName="flex justify-between items-center hidden md:flex"
         liClassName="text-sm font-poppins uppercase font-bold lg:text-base 3xl:text-xl hover:text-blue-600 duration-300 ease-in-out"
