@@ -1,7 +1,6 @@
-@tailwind base;
-
 @import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins&family=Roboto&display=swap");
 
+@tailwind base;
 html,
 body {
   padding: 0;
