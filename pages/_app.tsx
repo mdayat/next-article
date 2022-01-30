@@ -5,6 +5,7 @@ import { Navbar } from "@components/Navbar";
 import { MemoizedNavbar } from "@components/Navbar/NavbarComponents/MemoizedNavbar";
 
 import "../app/styles/globals.css";
+import { Footer } from "@components/Footer";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -20,6 +21,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Navbar>
 
       <Component {...pageProps} />
+
+      <Footer />
     </>
   );
 }
