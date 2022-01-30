@@ -5,13 +5,13 @@ import { Article } from "app/components";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <main>
       <Head>
         <title>Next Article</title>
       </Head>
 
       <Article />
-    </div>
+    </main>
   );
 };
 

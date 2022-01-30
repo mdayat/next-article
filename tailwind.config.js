@@ -8,8 +8,8 @@ module.exports = {
       sm: "425px",
       // => @media (min-width: 425px) { ... }
 
-      md: "576px",
-      // => @media (min-width: 576px) { ... }
+      md: "640px",
+      // => @media (min-width: 640px) { ... }
 
       lg: "768px",
       // => @media (min-width: 768px) { ... }
@@ -20,7 +20,7 @@ module.exports = {
       "2xl": "1280px",
       // => @media (min-width: 1280px) { ... }
 
-      "2xl": "1536px",
+      "3xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
     extend: {

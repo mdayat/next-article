@@ -1,9 +1,11 @@
+import { ArticleList } from "./ArticleList";
 import { HeroArticle } from "./HeroArticle";
 
 const Article = () => {
   return (
-    <article className="w-11/12 mx-auto py-40">
+    <article className="w-screen mx-auto pt-40">
       <HeroArticle />
+      <ArticleList />
     </article>
   );
 };
