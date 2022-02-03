@@ -1,34 +1,34 @@
 import Link from "next/link";
 
-import { Button } from "@components/Button";
-
 interface NavbarLinksProps {
   ulClassName?: string;
   liClassName?: string;
-  btnClassName?: string;
+  linkClassName?: string;
 }
 
 const NavbarLinks = ({
   ulClassName = "",
   liClassName = "",
-  btnClassName = "",
+  linkClassName = "",
 }: NavbarLinksProps) => {
   return (
-    <ul className={ulClassName}>
-      <li className={liClassName}>
+    <ul className={`flex justify-between ${ulClassName}`}>
+      <li
+        className={`text-sm font-poppins font-bold first:uppercase hover:text-blue-600 duration-300 ease-in-out ${liClassName}`}
+      >
         <Link href="/article">
           <a>Articles</a>
         </Link>
       </li>
 
       <li className={liClassName}>
-        <Button
-          type="button"
-          className={btnClassName}
-          onClick={(e) => console.log(e)}
-        >
-          Sign In
-        </Button>
+        <Link href="/login">
+          <a
+            className={`font-poppins bg-blue-600 text-white py-1.5 rounded-md hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl ${linkClassName}`}
+          >
+            Sign In
+          </a>
+        </Link>
       </li>
     </ul>
   );

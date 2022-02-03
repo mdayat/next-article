@@ -32,9 +32,9 @@ const Navbar = ({ children }: NavbarProps) => {
 
       {isClicked && (
         <NavbarLinks
-          ulClassName="w-11/12 lg:w-10/12 mx-auto flex flex-col justify-between h-32 md:hidden"
-          liClassName="w-full font-poppins font-bold text-center first:mt-4 last:pb-6 hover:text-blue-600 duration-300 ease-in-out uppercase text-sm sm:text-base"
-          btnClassName="w-full font-poppins bg-blue-600 text-white py-1.5 rounded-md select-none hover:bg-blue-700 duration-300 ease-in-out drop-shadow-xl sm:w-[calc(100%-15%)] text-sm sm:text-base"
+          ulClassName="w-11/12 lg:w-10/12 mx-auto flex-col h-32 md:hidden"
+          liClassName="w-full text-center first:mt-4 last:pb-6 sm:text-base"
+          linkClassName="w-full select-none sm:w-[calc(100%-15%)] text-sm sm:text-base"
         />
       )}
     </nav>
