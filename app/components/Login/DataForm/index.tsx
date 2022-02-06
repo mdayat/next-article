@@ -4,16 +4,24 @@ import { FaUser, FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 
 interface LoginFormProps {
   setForgotPassword: React.Dispatch<React.SetStateAction<boolean>>;
+  loginData: { username: string; password: string };
+  handleInputForm: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  submitForm: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const DataForm = ({ setForgotPassword }: LoginFormProps) => {
+const DataForm = ({
+  setForgotPassword,
+  loginData,
+  handleInputForm,
+  submitForm,
+}: LoginFormProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <form
-      action=""
       className="w-[90vw] sm:w-[70vw] md:w-[55vw] lg:w-full h-fit place-self-center rounded-lg p-4 bg-white"
       method="POST"
+      onSubmit={submitForm}
     >
       <fieldset>
         <h2 className="text-blue-600 font-poppins font-bold text-center mb-8 text-base lg:text-lg lg:mb-10">
@@ -34,6 +42,8 @@ const DataForm = ({ setForgotPassword }: LoginFormProps) => {
           className="font-poppins px-4 py-1 w-[calc(100%-10%)] border-2 focus:border-2 focus:border-blue-600 rounded-lg outline-none text-xs xl:text-sm"
           required
           autoComplete="off"
+          value={loginData.username}
+          onChange={handleInputForm}
         />
       </fieldset>
 
@@ -50,6 +60,8 @@ const DataForm = ({ setForgotPassword }: LoginFormProps) => {
             placeholder="Password"
             className="font-poppins px-4 py-1 w-full border-2 focus:border-2 focus:border-blue-600 rounded-lg outline-none text-xs xl:text-sm"
             required
+            value={loginData.password}
+            onChange={handleInputForm}
           />
 
           <button
