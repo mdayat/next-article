@@ -9,7 +9,11 @@ import IsoflatIcon from "@icons/isoflat.svg";
 
 const LoginForm = () => {
   const { login } = useAuth();
+
   const [forgotPassword, setForgotPassword] = useState(false);
+
+  const [rememberMe, setRememberMe] = useState(false);
+
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
@@ -17,12 +21,14 @@ const LoginForm = () => {
 
   const handleInputForm = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
+
     setLoginData({ ...loginData, [event.target.name]: value });
   };
 
   const submitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await login({ ...loginData });
+
+    await login({ ...loginData, rememberMe });
   };
 
   return (
@@ -35,10 +41,12 @@ const LoginForm = () => {
         <ForgotPassword setForgotPassword={setForgotPassword} />
       ) : (
         <DataForm
-          setForgotPassword={setForgotPassword}
+          rememberMe={rememberMe}
+          setRememberMe={setRememberMe}
           loginData={loginData}
           handleInputForm={handleInputForm}
           submitForm={submitForm}
+          setForgotPassword={setForgotPassword}
         />
       )}
     </div>

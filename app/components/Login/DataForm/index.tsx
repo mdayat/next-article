@@ -3,17 +3,21 @@ import { useState } from "react";
 import { FaUser, FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
 
 interface LoginFormProps {
-  setForgotPassword: React.Dispatch<React.SetStateAction<boolean>>;
+  rememberMe: boolean;
+  setRememberMe: React.Dispatch<React.SetStateAction<boolean>>;
   loginData: { username: string; password: string };
   handleInputForm: (event: React.ChangeEvent<HTMLInputElement>) => void;
   submitForm: (event: React.FormEvent<HTMLFormElement>) => void;
+  setForgotPassword: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const DataForm = ({
-  setForgotPassword,
+  rememberMe,
+  setRememberMe,
   loginData,
   handleInputForm,
   submitForm,
+  setForgotPassword,
 }: LoginFormProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -91,6 +95,10 @@ const DataForm = ({
             id="rememberMe"
             name="rememberMe"
             className="cursor-pointer mr-1.5"
+            onClick={() =>
+              rememberMe ? setRememberMe(false) : setRememberMe(true)
+            }
+            value={rememberMe ? "true" : "false"}
           />
 
           <label

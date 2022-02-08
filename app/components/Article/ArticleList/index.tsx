@@ -18,7 +18,7 @@ const DummyArticleList = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     author: "Author 1",
     authorProfile: <FaUserCircle />,
-    authorEmail: "muhnurdayat@gmail.com",
+    authorEmail: "mailto:muhnurdayat@gmail.com",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const DummyArticleList = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     author: "Author 2",
     authorProfile: <FaUserCircle />,
-    authorEmail: "muhnurdayat@gmail.com",
+    authorEmail: "mailto:muhnurdayat@gmail.com",
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const DummyArticleList = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     author: "Author 3",
     authorProfile: <FaUserCircle />,
-    authorEmail: "muhnurdayat@gmail.com",
+    authorEmail: "mailto:muhnurdayat@gmail.com",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const DummyArticleList = [
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     author: "Author 4",
     authorProfile: <FaUserCircle />,
-    authorEmail: "muhnurdayat@gmail.com",
+    authorEmail: "mailto:muhnurdayat@gmail.com",
   },
 ];
 
