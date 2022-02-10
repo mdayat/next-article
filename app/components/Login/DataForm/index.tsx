@@ -9,6 +9,7 @@ interface LoginFormProps {
   handleInputForm: (event: React.ChangeEvent<HTMLInputElement>) => void;
   submitForm: (event: React.FormEvent<HTMLFormElement>) => void;
   setForgotPassword: React.Dispatch<React.SetStateAction<boolean>>;
+  loginStatus: "SUCCEED" | "FAILED" | undefined;
 }
 
 const DataForm = ({
@@ -18,6 +19,7 @@ const DataForm = ({
   handleInputForm,
   submitForm,
   setForgotPassword,
+  loginStatus,
 }: LoginFormProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -28,10 +30,21 @@ const DataForm = ({
       onSubmit={submitForm}
     >
       <fieldset>
-        <h2 className="text-blue-600 font-poppins font-bold text-center mb-8 text-base lg:text-lg lg:mb-10">
+        <h2 className="text-blue-600 font-poppins font-bold text-center mb-6 text-base lg:text-lg lg:mb-8">
           Login to read more articles
         </h2>
       </fieldset>
+
+      {loginStatus === "FAILED" && (
+        <fieldset>
+          <label
+            htmlFor="error"
+            className="block text-red-500 font-poppins font-bold italic text-xs mb-2 text-center lg:text-sm lg:mb-3 2xl:mb-4 3xl:text-base animate-pulse"
+          >
+            Username or Password doesn&apos;t match
+          </label>
+        </fieldset>
+      )}
 
       <fieldset className="flex justify-between items-center mb-3.5 lg:mb-6">
         <i>

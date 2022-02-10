@@ -2,7 +2,7 @@ import { LegacyRef } from "react";
 import { FaBars } from "react-icons/fa";
 
 import { useDetectClick } from "app/hooks";
-import { NavbarLinks } from "./NavbarComponents/NavbarLinks";
+import { NavbarLinks } from "./NavbarLinks";
 
 interface NavbarProps {
   children?: React.ReactNode;
@@ -34,7 +34,7 @@ const Navbar = ({ children }: NavbarProps) => {
         <NavbarLinks
           ulClassName="w-11/12 lg:w-10/12 mx-auto flex-col h-32 md:hidden"
           liClassName="w-full text-center first:mt-4 last:pb-6 sm:text-base"
-          linkClassName="w-full select-none sm:w-[calc(100%-15%)] text-sm sm:text-base"
+          linkClassName="w-full select-none mx-auto sm:w-[90vw] text-sm sm:text-base"
         />
       )}
     </nav>

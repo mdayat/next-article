@@ -13,7 +13,7 @@ const apiAuthCheck =
           return await handler(req, res);
         }
 
-        res.status(401).json({ message: "You are not authenticated!" });
+        return res.status(401).json({ message: "You are not authenticated!" });
       }
     );
   };

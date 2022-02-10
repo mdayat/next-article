@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-import { useAuth } from "app/hooks/useAuth";
+import { useAuth } from "app/hooks";
 import { DataForm } from "./DataForm";
 import { ForgotPassword } from "./ForgotPassword";
 
 import IsoflatIcon from "@icons/isoflat.svg";
 
 const LoginForm = () => {
-  const { login } = useAuth();
+  const { login, loginStatus } = useAuth();
 
   const [forgotPassword, setForgotPassword] = useState(false);
 
@@ -47,6 +47,7 @@ const LoginForm = () => {
           handleInputForm={handleInputForm}
           submitForm={submitForm}
           setForgotPassword={setForgotPassword}
+          loginStatus={loginStatus}
         />
       )}
     </div>

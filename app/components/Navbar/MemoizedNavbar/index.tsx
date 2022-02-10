@@ -12,6 +12,7 @@ const MemoizedNavbar = () => {
           </h1>
         </a>
       </Link>
+
       <NavbarLinks
         ulClassName="items-center hidden md:flex"
         liClassName="lg:text-base 3xl:text-xl"

@@ -4,7 +4,7 @@ import Head from "next/head";
 import { Article } from "app/components";
 import { Footer } from "@components/Footer";
 import { Navbar } from "@components/Navbar";
-import { MemoizedNavbar } from "@components/Navbar/NavbarComponents/MemoizedNavbar";
+import { MemoizedNavbar } from "@components/Navbar/MemoizedNavbar";
 
 const Home: NextPage = () => {
   return (

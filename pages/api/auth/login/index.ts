@@ -4,13 +4,14 @@ import jwt from "jsonwebtoken";
 import cookie from "cookie";
 
 import { prisma } from "app/lib";
+import { LoginDataTypes } from "app/types";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
     res.status(405).end();
   }
 
-  const { username, password, rememberMe } = req.body;
+  const { username, password, rememberMe }: LoginDataTypes = req.body;
 
   const maxAgeDuration = rememberMe ? 60 * 60 * 24 : 60 * 60;
 
@@ -22,14 +23,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (!user) {
-      throw new Error("Username or Password doesn't match");
+      throw new Error("Failed");
     }
 
     const comparePassword =
       user?.password && (await bcrypt.compare(password, user.password));
 
     if (!comparePassword) {
-      throw new Error("Username or Password doesn't match");
+      throw new Error("Failed");
     }
 
     const token = jwt.sign(
@@ -52,10 +53,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       })
     );
 
-    res.status(200).json({ message: "You are authenticated" });
+    res.status(200).send({ status: "Succeed" });
   } catch (error: any) {
-    console.log(error);
-    res.status(500).send({ error });
+    res.status(401).json({ status: error });
   }
 };
 

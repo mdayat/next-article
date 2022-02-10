@@ -66,6 +66,7 @@ const ArticleList = () => {
               figClassName="w-[calc(90vw)] sm:w-[calc(42.5vw)] mx-auto mb-4 sm:mb-5 md:mb-6 lg:mb-8 2xl:mb-10 drop-shadow-xl hover:drop-shadow-2xl duration-300 ease-in-out"
               imgClassName="rounded-lg"
             />
+
             <div className="w-[calc(90vw)] sm:w-[calc(42.5vw)] mx-auto md:flex justify-between">
               <div className="basis-6/12 mb-6 md:mb-0">
                 <ArticleTitle

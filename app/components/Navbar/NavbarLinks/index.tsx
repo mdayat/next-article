@@ -24,7 +24,7 @@ const NavbarLinks = ({
       <li className={liClassName}>
         <Link href="/auth/login">
           <a
-            className={`font-poppins bg-blue-600 text-white py-1.5 rounded-md hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl ${linkClassName}`}
+            className={`block font-poppins bg-blue-600 text-white py-1.5 rounded-md hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl ${linkClassName}`}
           >
             Sign In
           </a>

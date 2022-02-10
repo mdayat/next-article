@@ -8,7 +8,6 @@ interface ForgotPasswordProps {
 const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
   return (
     <form
-      action=""
       className="w-[90vw] md:w-[55vw] lg:w-full h-fit place-self-center rounded-lg p-4 bg-white"
       method="POST"
     >
@@ -16,6 +15,7 @@ const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
         <h2 className="text-blue-600 font-poppins font-bold text-center text-lg lg:text-lg mb-3">
           Forgot your password?
         </h2>
+
         <p className="font-poppins font-bold text-blue-500 italic text-xs">
           Please enter your registered email. We will send you a link to update
           your password
