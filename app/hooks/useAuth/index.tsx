@@ -29,7 +29,11 @@ const useAuth = () => {
     }
   };
 
-  const logout = async () => {};
+  const logout = async () => {
+    await axios.post("/api/auth/logout");
+
+    push("/auth/login");
+  };
 
   return { login, logout, loginStatus };
 };
