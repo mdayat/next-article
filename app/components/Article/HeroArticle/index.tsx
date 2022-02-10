@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { FaUserCircle } from "react-icons/fa";
 
-import { ArticleAuthor } from "../ArticleComponents";
-import { ArticleDate } from "../ArticleComponents";
-import { ArticleImage } from "../ArticleComponents";
-import { ArticleText } from "../ArticleComponents";
-import { ArticleTitle } from "../ArticleComponents";
+import {
+  ArticleAuthor,
+  ArticleDate,
+  ArticleImage,
+  ArticleText,
+  ArticleTitle,
+} from "../ArticleComponents";
 
 const HeroArticle = () => {
   return (
