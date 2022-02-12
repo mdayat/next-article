@@ -25,7 +25,7 @@ const DataForm = ({
 
   return (
     <form
-      className="w-[90vw] sm:w-[70vw] md:w-[55vw] lg:w-full h-fit place-self-center rounded-lg p-4 bg-white"
+      className="w-full px-2 sm:px-6 md:px-10"
       method="POST"
       onSubmit={submitForm}
     >
@@ -83,6 +83,7 @@ const DataForm = ({
 
           <button
             type="button"
+            aria-label="Show and hidden password"
             className="absolute right-[12px]"
             onClick={() =>
               showPassword ? setShowPassword(false) : setShowPassword(true)
@@ -134,7 +135,7 @@ const DataForm = ({
       <fieldset className="grid place-items-center">
         <button
           type="submit"
-          className="w-full font-poppins bg-blue-600 text-white font-bold py-1 rounded-md hover:bg-blue-700 duration-300 ease-in-out drop-shadow-xl text-sm xl:text-base"
+          className="w-full font-poppins border-2 border-blue-600 text-blue-600 font-bold py-1 rounded-md hover:bg-blue-700 hover:text-white duration-300 ease-in-out drop-shadow-xl text-sm xl:text-base"
         >
           Sign In
         </button>

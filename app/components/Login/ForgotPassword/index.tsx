@@ -7,16 +7,13 @@ interface ForgotPasswordProps {
 
 const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
   return (
-    <form
-      className="w-[90vw] md:w-[55vw] lg:w-full h-fit place-self-center rounded-lg p-4 bg-white"
-      method="POST"
-    >
-      <fieldset className="mb-8">
-        <h2 className="text-blue-600 font-poppins font-bold text-center text-lg lg:text-lg mb-3">
+    <form className="w-full px-2 sm:px-6 md:px-10" method="POST">
+      <fieldset className="mb-4">
+        <h2 className="text-blue-600 font-poppins font-bold text-center text-lg lg:text-lg mb-5">
           Forgot your password?
         </h2>
 
-        <p className="font-poppins font-bold text-blue-500 italic text-xs">
+        <p className="font-poppins font-bold text-blue-500 italic text-center text-xs lg:text-sm">
           Please enter your registered email. We will send you a link to update
           your password
         </p>
