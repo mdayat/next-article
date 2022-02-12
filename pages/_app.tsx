@@ -1,18 +1,38 @@
+import { ReactElement, ReactNode } from "react";
+import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
+import { Layout } from "@components/Layout";
 import "../app/styles/globals.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  if (Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />);
+  }
+
   return (
     <>
       <Head>
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Next JS Article" />
+        <meta name="keywords" content="Javascript, React, Next JS" />
+        <meta name="author" content="Muhammad Nur Hidayat" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Next Article" />
-        <link rel="icon" href="/assets/icons/favicon.ico" />
       </Head>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

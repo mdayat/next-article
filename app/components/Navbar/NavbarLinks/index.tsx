@@ -1,8 +1,4 @@
-import { useContext } from "react";
 import Link from "next/link";
-
-import { useAuth } from "app/hooks";
-import { LoginStatusContext } from "pages";
 
 interface NavbarLinksProps {
   ulClassName?: string;
@@ -15,10 +11,6 @@ const NavbarLinks = ({
   liClassName = "",
   linkClassName = "",
 }: NavbarLinksProps) => {
-  const { logout } = useAuth();
-
-  const loginStatusContext = useContext(LoginStatusContext);
-
   return (
     <ul className={`flex justify-between ${ulClassName}`}>
       <li
@@ -30,24 +22,13 @@ const NavbarLinks = ({
       </li>
 
       <li className={liClassName}>
-        {loginStatusContext === "FAILED" ? (
-          <Link href="/auth/login">
-            <a
-              className={`block font-poppins bg-blue-600 text-white py-1.5 rounded-md hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl ${linkClassName}`}
-            >
-              Sign In
-            </a>
-          </Link>
-        ) : (
-          loginStatusContext === "SUCCEED" && (
-            <button
-              className={`block font-poppins bg-blue-600 text-white py-1.5 rounded-md hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl ${linkClassName}`}
-              onClick={logout}
-            >
-              Sign Out
-            </button>
-          )
-        )}
+        <Link href="/auth/login">
+          <a
+            className={`block font-poppins bg-blue-600 text-white py-1.5 rounded-md hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl ${linkClassName}`}
+          >
+            Sign In
+          </a>
+        </Link>
       </li>
     </ul>
   );
