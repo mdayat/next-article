@@ -1,6 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { FaUser, FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
+import Image from "next/image";
+
+import UserIcon from "@icons/user-solid.svg";
+import LockIcon from "@icons/lock-solid.svg";
+import EyeIcon from "@icons/eye-solid.svg";
+import EyeSlashIcon from "@icons/eye-slash-solid.svg";
 
 interface LoginFormProps {
   rememberMe: boolean;
@@ -48,7 +53,7 @@ const DataForm = ({
 
       <fieldset className="flex justify-between items-center mb-3.5 lg:mb-6">
         <i>
-          <FaUser className="text-blue-600 self-center" />
+          <Image src={UserIcon} alt="User Icon" width={16} height={16} />
         </i>
 
         <input
@@ -66,7 +71,7 @@ const DataForm = ({
 
       <fieldset className="flex justify-between items-center mb-3.5 lg:mb-6">
         <i>
-          <FaLock className="text-blue-600 self-center" />
+          <Image src={LockIcon} alt="Lock Icon" width={16} height={16} />
         </i>
 
         <div className="relative w-[calc(100%-10%)] text-right flex items-center">
@@ -90,12 +95,17 @@ const DataForm = ({
             }
           >
             {showPassword ? (
-              <i className="text-sm lg:text-base">
-                <FaEye />
+              <i>
+                <Image src={EyeIcon} alt="Eye Icon" width={16} height={16} />
               </i>
             ) : (
-              <i className="text-sm lg:text-base">
-                <FaEyeSlash />
+              <i>
+                <Image
+                  src={EyeSlashIcon}
+                  alt="Eye Slash Icon"
+                  width={16}
+                  height={16}
+                />
               </i>
             )}
           </button>

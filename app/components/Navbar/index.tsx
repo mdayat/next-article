@@ -1,8 +1,10 @@
 import { LegacyRef } from "react";
-import { FaBars } from "react-icons/fa";
+import Image from "next/image";
+import Link from "next/link";
 
 import { useDetectClick } from "app/hooks";
-import { NavbarLinks } from "./NavbarLinks";
+
+import BarsIcon from "@icons/bars-solid.svg";
 
 interface NavbarProps {
   children?: React.ReactNode;
@@ -22,20 +24,28 @@ const Navbar = ({ children }: NavbarProps) => {
           onClick={() => (isClicked ? setIsClicked(false) : setIsClicked(true))}
           ref={clickOutsideRef as LegacyRef<HTMLButtonElement>}
         >
-          <FaBars
-            className={`${
-              isClicked && "hidden"
-            } hover:text-blue-600 duration-300 ease-in-out`}
-          />
+          <i>
+            <Image src={BarsIcon} alt="Bars Icon" width={14} height={14} />
+          </i>
         </button>
       </div>
 
       {isClicked && (
-        <NavbarLinks
-          ulClassName="w-11/12 lg:w-10/12 mx-auto flex-col h-32 md:hidden"
-          liClassName="w-full text-center first:mt-4 last:pb-6 sm:text-base"
-          linkClassName="w-full select-none mx-auto sm:w-[90vw] text-sm sm:text-base"
-        />
+        <ul className="w-11/12 lg:w-10/12 mx-auto flex flex-col justify-between h-32 md:hidden">
+          <li className="w-full font-poppins font-bold text-center uppercase mt-4 hover:text-blue-600 duration-300 ease-in-out text-sm sm:text-base">
+            <Link href="/article">
+              <a>Articles</a>
+            </Link>
+          </li>
+
+          <li className="pb-6">
+            <Link href="/auth/login">
+              <a className="block font-poppins text-center rounded-md select-none py-1.5 bg-blue-600 text-white hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl w-full sm:w-[90vw] mx-auto text-sm sm:text-base">
+                Sign In
+              </a>
+            </Link>
+          </li>
+        </ul>
       )}
     </nav>
   );

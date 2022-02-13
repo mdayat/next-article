@@ -6,7 +6,7 @@ import CircleUserSolidIcon from "@icons/circle-user-solid.svg";
 
 const HeroArticle = () => {
   return (
-    <section className="bg-gray-200 w-full md:w-[95vw] xl:w-[90vw] mx-auto p-2 sm:p-2.5 md:p-4 lg:p-6 xl:p-8 2xl:p-10 md:rounded-lg 2xl:rounded-xl mb-10 md:mb-20">
+    <section className="bg-gray-200 w-full md:w-[95vw] xl:w-[90vw] mx-auto p-2 py-4 sm:p-2.5 sm:py-5 md:p-4 lg:p-6 xl:p-8 2xl:p-10 md:rounded-lg 2xl:rounded-xl mb-10 md:mb-20">
       <figure>
         <Link href="https://nextjs.org/docs/basic-features/pages#pre-rendering">
           <a className="block relative w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] 2xl:h-[500px]">

@@ -9,7 +9,7 @@ const ArticleList = () => {
       {articleListData.map((article) => {
         return (
           <section
-            className="bg-gray-200 p-2 sm:p-2.5 md:p-4 lg:p-6 xl:p-8 2xl:p-10 md:rounded-lg 2xl:rounded-xl w-full"
+            className="bg-gray-200 p-2 py-4 sm:p-2.5 sm:py-5 md:p-4 lg:p-6 xl:p-8 2xl:p-10 md:rounded-lg 2xl:rounded-xl w-full"
             key={article.title}
           >
             <figure>

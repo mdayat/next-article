@@ -1,5 +1,7 @@
 import React from "react";
-import { FaUser } from "react-icons/fa";
+import Image from "next/image";
+
+import UserIcon from "@icons/user-solid.svg";
 
 interface ForgotPasswordProps {
   setForgotPassword: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,7 +23,7 @@ const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
 
       <fieldset className="flex justify-between items-center mb-6 lg:mb-6">
         <i>
-          <FaUser className="text-blue-600 self-center" />
+          <Image src={UserIcon} alt="User Icon" width={16} height={16} />
         </i>
 
         <input
