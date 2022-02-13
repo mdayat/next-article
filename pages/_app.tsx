@@ -24,7 +24,6 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <Head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Next JS Article" />
         <meta name="keywords" content="Javascript, React, Next JS" />
         <meta name="author" content="Muhammad Nur Hidayat" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

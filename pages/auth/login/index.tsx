@@ -21,7 +21,6 @@ function LoginPage() {
           placeholder="blur"
           objectFit="cover"
           layout="fill"
-          priority
         />
       </figure>
 
