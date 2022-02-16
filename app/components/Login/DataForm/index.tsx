@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import Image from "next/image";
 
 import UserIcon from "@icons/user-solid.svg";
 import LockIcon from "@icons/lock-solid.svg";
@@ -53,7 +52,7 @@ const DataForm = ({
 
       <fieldset className="flex justify-between items-center mb-3.5 lg:mb-6">
         <i>
-          <Image src={UserIcon} alt="User Icon" width={16} height={16} />
+          <UserIcon className="fill-blue-600 w-[16px]" />
         </i>
 
         <input
@@ -71,7 +70,7 @@ const DataForm = ({
 
       <fieldset className="flex justify-between items-center mb-3.5 lg:mb-6">
         <i>
-          <Image src={LockIcon} alt="Lock Icon" width={16} height={16} />
+          <LockIcon className="fill-blue-600 w-[16px]" />
         </i>
 
         <div className="relative w-[calc(100%-10%)] text-right flex items-center">
@@ -96,16 +95,11 @@ const DataForm = ({
           >
             {showPassword ? (
               <i>
-                <Image src={EyeIcon} alt="Eye Icon" width={16} height={16} />
+                <EyeIcon className="fill-gray-800 w-[16px]" />
               </i>
             ) : (
               <i>
-                <Image
-                  src={EyeSlashIcon}
-                  alt="Eye Slash Icon"
-                  width={16}
-                  height={16}
-                />
+                <EyeSlashIcon className="fill-gray-800 w-[16px]" />
               </i>
             )}
           </button>

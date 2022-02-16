@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 import UserIcon from "@icons/user-solid.svg";
 
@@ -23,7 +22,7 @@ const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
 
       <fieldset className="flex justify-between items-center mb-6 lg:mb-6">
         <i>
-          <Image src={UserIcon} alt="User Icon" width={16} height={16} />
+          <UserIcon className="fill-blue-600 w-[16px]" />
         </i>
 
         <input

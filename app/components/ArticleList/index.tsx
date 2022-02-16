@@ -27,13 +27,13 @@ const ArticleList = () => {
             </figure>
 
             <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-7">
-              <Link href={article.source}>
-                <a>
-                  <h2 className="font-poppins font-bold hover:underline hover:duration-1000 hover:ease-in-out text-lg sm:text-xl lg:text-2xl 2xl:text-3xl lg:mb-2">
+              <h2>
+                <Link href={article.source}>
+                  <a className="block font-poppins font-bold hover:underline hover:duration-1000 hover:ease-in-out text-lg sm:text-xl lg:text-2xl 2xl:text-3xl lg:mb-2">
                     {article.title}
-                  </h2>
-                </a>
-              </Link>
+                  </a>
+                </Link>
+              </h2>
 
               <time
                 dateTime={article.date}
@@ -49,13 +49,9 @@ const ArticleList = () => {
               </p>
 
               <figure className="flex items-center justify-start mt-4 sm:mt-5 md:mt-6 lg:mt-7">
-                <div className="relative w-[26px] h-[26px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]">
-                  <Image
-                    src={article.authorProfile}
-                    alt={article.authorName}
-                    layout="fill"
-                  />
-                </div>
+                <i>
+                  <article.authorProfile className="fill-gray-800 w-[26px] lg:w-[30px] 2xl:w-[32px]" />
+                </i>
 
                 <Link href={article.authorEmail} prefetch={false}>
                   <a className="block font-roboto font-bold text-center hover:underline hover:duration-1000 hover:ease-in-out ml-2 text-xs lg:text-sm 2xl:text-base">

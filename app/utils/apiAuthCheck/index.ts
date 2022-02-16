@@ -5,8 +5,10 @@ const apiAuthCheck =
   (handler: NextApiHandler) => (req: NextApiRequest, res: NextApiResponse) => {
     const cookie = req.cookies.auth;
 
+    const cookieHeader = req.headers.cookie!;
+
     jwt.verify(
-      cookie,
+      cookie || cookieHeader,
       process.env.JWT_SECRET as Secret | GetPublicKeyOrSecret,
       async (err, decoded) => {
         if (!err && decoded) {

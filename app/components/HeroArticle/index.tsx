@@ -25,13 +25,16 @@ const HeroArticle = () => {
 
       <div className="md:flex">
         <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-7 md:basis-2/5">
-          <Link href="https://nextjs.org/docs/basic-features/pages#pre-rendering">
-            <a>
-              <h1 className="font-poppins font-bold hover:underline hover:duration-1000 hover:ease-in-out text-lg sm:text-xl lg:text-2xl 2xl:text-3xl lg:mb-2">
+          <h1>
+            <Link
+              href="https://nextjs.org/docs/basic-features/pages#pre-rendering"
+              passHref
+            >
+              <a className="block font-poppins font-bold hover:underline hover:duration-1000 hover:ease-in-out text-lg sm:text-xl lg:text-2xl 2xl:text-3xl lg:mb-2">
                 Pre Rendering Next JS
-              </h1>
-            </a>
-          </Link>
+              </a>
+            </Link>
+          </h1>
 
           <time
             dateTime="2022-02-12"
@@ -49,13 +52,9 @@ const HeroArticle = () => {
           </p>
 
           <figure className="flex items-center justify-start mt-4 sm:mt-5 md:mt-6 lg:mt-7">
-            <div className="relative w-[26px] h-[26px] md:w-[28px] md:h-[28px] lg:w-[32px] lg:h-[32px]">
-              <Image
-                src={CircleUserSolidIcon}
-                alt="Muhammad Nur Hidayat"
-                layout="fill"
-              />
-            </div>
+            <i>
+              <CircleUserSolidIcon className="fill-gray-800 w-[26px] lg:w-[30px] 2xl:w-[32px]" />
+            </i>
 
             <Link href="mailto:muhnurdayat@gmail.com" prefetch={false}>
               <a className="block font-roboto font-bold text-center hover:underline hover:duration-1000 hover:ease-in-out ml-2 text-xs lg:text-sm 2xl:text-base">

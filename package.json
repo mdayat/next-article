@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@prisma/client": "^3.9.1",
+    "@svgr/webpack": "^6.2.1",
     "axios": "^0.25.0",
     "bcrypt": "^5.0.1",
     "cookie": "^0.4.2",

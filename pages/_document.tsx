@@ -1,8 +1,8 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
-function Document() {
+const Document = () => {
   return (
-    <Html lang="en">
+    <Html lang="en" className="scroll-smooth">
       <Head>
         <link rel="icon" href="/assets/icons/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +23,6 @@ function Document() {
       </body>
     </Html>
   );
-}
+};
 
 export default Document;

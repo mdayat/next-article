@@ -6,7 +6,7 @@ import { LoginForm } from "@components/Login";
 
 import LoginImage from "@images/login.jpeg";
 
-function LoginPage() {
+const LoginPage = () => {
   return (
     <section className="h-screen bg-gray-50 grid lg:grid-cols-7">
       <Head>
@@ -27,7 +27,7 @@ function LoginPage() {
       <LoginForm />
     </section>
   );
-}
+};
 
 export default LoginPage;
 

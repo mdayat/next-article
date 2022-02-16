@@ -1,8 +1,9 @@
-import type { NextPage } from "next";
+import { NextPage } from "next";
 import Head from "next/head";
 
 import { HeroArticle } from "@components/HeroArticle";
 import { ArticleList } from "@components/ArticleList";
+
 const Home: NextPage = () => {
   return (
     <>
