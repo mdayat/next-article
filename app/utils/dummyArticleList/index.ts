@@ -4,7 +4,7 @@ import DataFetchingImage from "@images/data-fetching.jpeg";
 import ApiRoutesImage from "@images/api-routes.jpeg";
 import CircleUserSolidIcon from "@icons/circle-user-solid.svg";
 
-const articleListData = [
+const dummyArticleList = [
   {
     image: StaticGenerationImage,
     title: "Static Generation Next JS",
@@ -15,7 +15,7 @@ const articleListData = [
       "https://nextjs.org/docs/basic-features/pages#static-generation-recommended",
     authorName: "Mawar",
     authorProfile: CircleUserSolidIcon,
-    authorEmail: "mailto:muhnurdayat@gmail.com",
+    authorEmail: "mailto:example@gmail.com",
   },
   {
     image: ServerSideRenderingImage,
@@ -27,7 +27,7 @@ const articleListData = [
       "https://nextjs.org/docs/basic-features/pages#server-side-rendering",
     authorName: "Melati",
     authorProfile: CircleUserSolidIcon,
-    authorEmail: "mailto:muhnurdayat@gmail.com",
+    authorEmail: "mailto:example@gmail.com",
   },
   {
     image: DataFetchingImage,
@@ -38,7 +38,7 @@ const articleListData = [
     source: "https://nextjs.org/docs/basic-features/data-fetching/overview",
     authorName: "Himawari",
     authorProfile: CircleUserSolidIcon,
-    authorEmail: "mailto:muhnurdayat@gmail.com",
+    authorEmail: "mailto:example@gmail.com",
   },
   {
     image: ApiRoutesImage,
@@ -49,8 +49,8 @@ const articleListData = [
     source: "https://nextjs.org/docs/api-routes/introduction",
     authorName: "Jasmine",
     authorProfile: CircleUserSolidIcon,
-    authorEmail: "mailto:muhnurdayat@gmail.com",
+    authorEmail: "mailto:example@gmail.com",
   },
 ];
 
-export { articleListData };
+export { dummyArticleList };

@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
-const Document = () => {
+function Document() {
   return (
     <Html lang="en" className="scroll-smooth">
       <Head>
@@ -9,7 +9,7 @@ const Document = () => {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin="use-credentials"
+          crossOrigin="anonymous"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins&family=Roboto&display=swap"
@@ -23,6 +23,6 @@ const Document = () => {
       </body>
     </Html>
   );
-};
+}
 
 export default Document;

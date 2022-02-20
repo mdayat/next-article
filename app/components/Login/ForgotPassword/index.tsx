@@ -10,17 +10,17 @@ const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
   return (
     <form className="w-full px-2 sm:px-6 md:px-10" method="POST">
       <fieldset className="mb-4">
-        <h2 className="text-blue-600 font-poppins font-bold text-center text-lg lg:text-lg mb-5">
+        <h2 className="text-white font-poppins font-bold text-center text-lg lg:text-lg mb-5">
           Forgot your password?
         </h2>
 
-        <p className="font-poppins font-bold text-blue-500 italic text-center text-xs lg:text-sm">
+        <p className="font-poppins font-bold text-white italic text-center text-xs lg:text-sm">
           Please enter your registered email. We will send you a link to update
           your password
         </p>
       </fieldset>
 
-      <fieldset className="flex justify-between items-center mb-6 lg:mb-6">
+      <fieldset className="flex justify-between items-center mb-6 lg:mb-8">
         <i>
           <UserIcon className="fill-blue-600 w-[16px]" />
         </i>
@@ -34,10 +34,10 @@ const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
         />
       </fieldset>
 
-      <fieldset className="flex justify-between items-center">
+      <fieldset className="grid grid-cols-2 gap-12">
         <button
           type="button"
-          className="bg-blue-600 text-white hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl text-sm w-[45%] py-1 rounded-lg lg:text-base"
+          className="col-span-1 py-1 border-2 border-blue-600 text-white hover:bg-blue-600 duration-300 ease-in-out rounded-lg lg:text-base"
           onClick={() => setForgotPassword(false)}
         >
           Back
@@ -45,7 +45,7 @@ const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
 
         <button
           type="submit"
-          className="bg-blue-600 text-white hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl text-sm w-[45%] py-1 rounded-lg lg:text-base"
+          className="col-span-1 py-1 border-2 border-blue-600 text-white hover:bg-blue-600 duration-300 ease-in-out rounded-lg lg:text-base"
         >
           Send
         </button>

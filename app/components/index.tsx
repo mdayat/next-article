@@ -1,6 +1,5 @@
-export * from "./ArticleList";
+export * from "./Article";
 export * from "./Footer";
-export * from "./HeroArticle";
 export * from "./Layout";
 export * from "./Login";
 export * from "./Navbar";

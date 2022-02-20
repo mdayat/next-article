@@ -8,7 +8,7 @@ import LoginImage from "@images/login.jpeg";
 
 const LoginPage = () => {
   return (
-    <section className="h-screen bg-gray-50 grid lg:grid-cols-7">
+    <section className="h-screen bg-gray-700 grid lg:grid-cols-7">
       <Head>
         <title>Login Page</title>
         <meta name="description" content="Next JS Article Login Page" />
@@ -20,6 +20,7 @@ const LoginPage = () => {
           alt="Login Image"
           placeholder="blur"
           objectFit="cover"
+          objectPosition="left center"
           layout="fill"
         />
       </figure>

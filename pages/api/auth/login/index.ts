@@ -53,7 +53,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       })
     );
 
-    res.status(200).send({ status: "Succeed" });
+    res.status(200).send({ status: "SUCCEED" });
   } catch (error: any) {
     res.status(401).json({ status: error });
   }

@@ -2,8 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    BASE_URL: process.env.BASE_URL,
     JWT_SECRET: process.env.JWT_SECRET,
+  },
+  images: {
+    domains: ["media.graphcms.com"],
   },
   webpack(config) {
     config.module.rules.push({

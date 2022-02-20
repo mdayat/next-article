@@ -1,13 +1,22 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import jwt, { GetPublicKeyOrSecret, Secret } from "jsonwebtoken";
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "GET") {
-    return res.status(405).end();
+    res.status(405).end();
   }
 
   const cookie = req.cookies.auth;
 
-  cookie ? res.status(200).send("SUCCEED") : res.status(204).end();
-};
+  console.log(req.query);
+
+  try {
+    jwt.verify(cookie, process.env.JWT_SECRET as Secret | GetPublicKeyOrSecret);
+
+    res.status(200).send("SUCCEED");
+  } catch {
+    res.status(200).send("FAILED");
+  }
+}
 
 export default handler;

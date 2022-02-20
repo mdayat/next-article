@@ -34,7 +34,7 @@ const DataForm = ({
       onSubmit={submitForm}
     >
       <fieldset>
-        <h2 className="text-blue-600 font-poppins font-bold text-center mb-6 text-base lg:text-lg lg:mb-8">
+        <h2 className="text-white font-poppins font-bold text-center mb-6 text-base lg:text-lg lg:mb-8">
           Login to read more articles
         </h2>
       </fieldset>
@@ -43,7 +43,7 @@ const DataForm = ({
         <fieldset>
           <label
             htmlFor="error"
-            className="block text-red-500 font-poppins font-bold italic text-xs mb-2 text-center lg:text-sm lg:mb-3 2xl:mb-4 3xl:text-base animate-pulse"
+            className="block text-red-400 font-poppins font-bold italic text-xs mb-2 text-center lg:text-sm lg:mb-3 2xl:mb-4 3xl:text-base animate-pulse"
           >
             Username or Password doesn&apos;t match
           </label>
@@ -121,7 +121,7 @@ const DataForm = ({
 
           <label
             htmlFor="rememberMe"
-            className="font-poppins text-blue-600 flex items-center select-none cursor-pointer text-xs xl:text-sm"
+            className="font-poppins text-white flex items-center select-none cursor-pointer text-xs xl:text-sm"
           >
             Remember me
           </label>
@@ -129,7 +129,7 @@ const DataForm = ({
 
         <button
           type="button"
-          className="font-poppins text-blue-600 hover:underline duration-300 ease-in-out text-xs xl:text-sm"
+          className="font-poppins text-white hover:underline duration-300 ease-in-out text-xs xl:text-sm"
           onClick={() => setForgotPassword(true)}
         >
           Forgot password?
@@ -139,7 +139,7 @@ const DataForm = ({
       <fieldset className="grid place-items-center">
         <button
           type="submit"
-          className="w-full font-poppins border-2 border-blue-600 text-blue-600 font-bold py-1 rounded-md hover:bg-blue-700 hover:text-white duration-300 ease-in-out drop-shadow-xl text-sm xl:text-base"
+          className="w-full font-poppins border-2 border-blue-600 text-white font-bold py-1 rounded-md hover:bg-blue-600 hover:border-transparent hover:text-white duration-300 ease-in-out text-sm xl:text-base"
         >
           Sign In
         </button>

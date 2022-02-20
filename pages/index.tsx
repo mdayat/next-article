@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import Head from "next/head";
 
-import { HeroArticle } from "@components/HeroArticle";
-import { ArticleList } from "@components/ArticleList";
+import { HeroArticle } from "@components/Article";
+import { ListArticle } from "@components/Article";
 
 const Home: NextPage = () => {
   return (
@@ -16,10 +16,8 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <article className="pt-40 pb-20">
-        <HeroArticle />
-        <ArticleList />
-      </article>
+      <HeroArticle />
+      <ListArticle />
     </>
   );
 };

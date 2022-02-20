@@ -1,34 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { articleListData } from "app/utils";
+import { dummyArticleList } from "app/utils";
 
-const ArticleList = () => {
+const ListArticle = () => {
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-2 lg:gap-4 xl:gap-6 2xl:gap-8 md:w-[95vw] xl:w-[90vw] mx-auto">
-      {articleListData.map((article) => {
+    <section className="w-full pb-20 grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-2 lg:gap-4 xl:gap-6 2xl:gap-8 md:w-[95vw] xl:w-[90vw] mx-auto">
+      {dummyArticleList.map((article) => {
         return (
-          <section
+          <article
             className="bg-gray-200 p-2 py-4 sm:p-2.5 sm:py-5 md:p-4 lg:p-6 xl:p-8 2xl:p-10 md:rounded-lg 2xl:rounded-xl w-full"
             key={article.title}
           >
             <figure>
-              <Link href={article.source}>
-                <a>
-                  <Image
-                    src={article.image}
-                    alt={article.title}
-                    layout="responsive"
-                    placeholder="blur"
-                    className="rounded-lg 2xl:rounded-xl"
-                  />
-                </a>
-              </Link>
+              <Image
+                src={article.image}
+                alt={article.title}
+                layout="responsive"
+                placeholder="blur"
+                className="rounded-lg 2xl:rounded-xl pointer-events-none select-none"
+              />
             </figure>
 
             <div className="mt-4 sm:mt-5 md:mt-6 lg:mt-7">
               <h2>
-                <Link href={article.source}>
+                <Link href={article.source} prefetch={false}>
                   <a className="block font-poppins font-bold hover:underline hover:duration-1000 hover:ease-in-out text-lg sm:text-xl lg:text-2xl 2xl:text-3xl lg:mb-2">
                     {article.title}
                   </a>
@@ -60,11 +56,11 @@ const ArticleList = () => {
                 </Link>
               </figure>
             </div>
-          </section>
+          </article>
         );
       })}
-    </div>
+    </section>
   );
 };
 
-export { ArticleList };
+export { ListArticle };

@@ -1,8 +1,8 @@
-import { LegacyRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
 
-import { useAuth, useDetectClick } from "app/hooks";
+import { useAuth } from "app/hooks";
 
 import BarsIcon from "@icons/bars-solid.svg";
 import CloseIcon from "@icons/xmark-solid.svg";
@@ -10,7 +10,7 @@ import CloseIcon from "@icons/xmark-solid.svg";
 const Navbar = () => {
   const { logout } = useAuth();
 
-  const { clickOutsideRef, isClicked, setIsClicked } = useDetectClick(false);
+  const [showNav, setShowNav] = useState(false);
 
   const [userStatus, setUserStatus] = useState<"SUCCEED" | "FAILED">("FAILED");
 
@@ -39,8 +39,8 @@ const Navbar = () => {
 
         <ul className="hidden md:flex justify-between items-center">
           {userStatus === "SUCCEED" && (
-            <li className="font-poppins font-bold uppercase hover:text-blue-600 duration-300 ease-in-out text-sm lg:text-base 3xl:text-xl">
-              <Link href="/article">
+            <li className="font-poppins font-bold uppercase text-sm lg:text-base 3xl:text-xl">
+              <Link href="/article" prefetch={false}>
                 <a>Articles</a>
               </Link>
             </li>
@@ -51,7 +51,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={logout}
-                className="block font-poppins rounded-md bg-blue-600 text-white hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl"
+                className="block font-poppins rounded-md bg-gray-600 text-white hover:bg-gray-700 duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl"
               >
                 Log out
               </button>
@@ -59,7 +59,7 @@ const Navbar = () => {
           ) : (
             <li>
               <Link href="/auth/login">
-                <a className="block font-poppins rounded-md bg-blue-600 text-white hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl">
+                <a className="block font-poppins rounded-md bg-gray-600 text-white hover:bg-gray-700 duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl">
                   Sign in
                 </a>
               </Link>
@@ -70,28 +70,28 @@ const Navbar = () => {
         <button
           type="button"
           className="md:hidden"
-          onClick={() => (isClicked ? setIsClicked(false) : setIsClicked(true))}
-          ref={clickOutsideRef as LegacyRef<HTMLButtonElement>}
+          aria-label="Show and Close Navbar"
+          onClick={() => (showNav ? setShowNav(false) : setShowNav(true))}
         >
           <i>
-            {isClicked && <CloseIcon className="w-[14px] fill-gray-800" />}
+            {showNav && <CloseIcon className="w-[14px] fill-gray-800" />}
 
             <BarsIcon
-              className={`${isClicked && "hidden"} w-[14px] fill-gray-800`}
+              className={`${showNav && "hidden"} w-[14px] fill-gray-800`}
             />
           </i>
         </button>
       </div>
 
-      {isClicked && (
+      {showNav && (
         <ul
           className={`w-11/12 lg:w-10/12 mx-auto flex flex-col justify-between h-32 md:hidden ${
             userStatus !== "SUCCEED" && "grid place-items-center grid-cols-1"
           }`}
         >
           {userStatus === "SUCCEED" && (
-            <li className="w-full font-poppins font-bold text-center uppercase mt-4 hover:text-blue-600 duration-300 ease-in-out text-sm sm:text-base">
-              <Link href="/article">
+            <li className="w-full font-poppins font-bold text-center uppercase mt-4 text-sm sm:text-base">
+              <Link href="/article" prefetch={false}>
                 <a>Articles</a>
               </Link>
             </li>
@@ -102,7 +102,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={logout}
-                className="block font-poppins text-center rounded-md select-none py-1.5 bg-blue-600 text-white hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl w-full sm:w-[90vw] mx-auto text-sm sm:text-base"
+                className="block font-poppins text-center rounded-md select-none py-1.5 bg-gray-600 text-white hover:bg-gray-700 duration-300 ease-in-out w-full sm:w-[90vw] mx-auto text-sm sm:text-base"
               >
                 Log out
               </button>
@@ -111,7 +111,7 @@ const Navbar = () => {
             <li className="pb-6 w-full sm:w-[90vw] mx-auto">
               <Link href="/auth/login">
                 <a
-                  className={`block font-poppins text-center rounded-md select-none py-1.5 bg-blue-600 text-white hover:bg-blue-700 duration-300 ease-in-out hover:drop-shadow-xl text-sm sm:text-base`}
+                  className={`block font-poppins text-center rounded-md select-none py-1.5 bg-gray-600 text-white hover:bg-gray-700 duration-300 ease-in-out text-sm sm:text-base`}
                 >
                   Sign in
                 </a>
