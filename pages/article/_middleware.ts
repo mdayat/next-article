@@ -5,7 +5,10 @@ const middleware = (req: NextRequest) => {
   const cookie = req.cookies.auth;
 
   if (!cookie) {
-    return NextResponse.redirect("http://localhost:3000/auth/login", 302);
+    return NextResponse.redirect(
+      "https://next-article-plum.vercel.app/auth/login",
+      302
+    );
   }
 
   try {
@@ -13,7 +16,10 @@ const middleware = (req: NextRequest) => {
 
     return NextResponse.next();
   } catch (err: any) {
-    return NextResponse.redirect("http://localhost:3000/auth/login", 302);
+    return NextResponse.redirect(
+      "https://next-article-plum.vercel.app/auth/login",
+      302
+    );
   }
 };
 

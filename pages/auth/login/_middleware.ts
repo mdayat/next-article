@@ -4,7 +4,7 @@ const middleware = (req: NextRequest) => {
   const cookie = req.cookies.auth;
 
   if (cookie) {
-    return NextResponse.redirect("http://localhost:3000", 302);
+    return NextResponse.redirect("https://next-article-plum.vercel.app", 302);
   }
 };
 
