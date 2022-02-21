@@ -8,14 +8,17 @@ import Head from "next/head";
 import Image from "next/image";
 import { request, gql } from "graphql-request";
 
-import { getArticle } from "app/services";
+import { RecentArticles } from "@components/Article";
+import { getArticle, getRecentPosts } from "app/services";
 import { getArticleContent } from "app/utils";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = (await getArticle(params?.details!)) || [];
 
+  const recentArticles = (await getRecentPosts(params?.details!)) || [];
+
   return {
-    props: { post },
+    props: { post, recentArticles },
   };
 };
 
@@ -43,6 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const ArticleDetails: NextPage = ({
   post,
+  recentArticles,
 }: InferGetStaticPropsType<GetStaticProps>) => {
   return (
     <>
@@ -67,11 +71,11 @@ const ArticleDetails: NextPage = ({
             />
           </figure>
 
-          <h1 className="text-center font-poppins font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl my-5 md:my-6 xl:my-8 2xl:my-10">
+          <h1 className="text-center font-poppins font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mt-5 md:mt-6 xl:mt-8 xl:mb-2 2xl:mb-4">
             {post.articleTitle}
           </h1>
 
-          <div className="px-4 pb-4 lg:p-6">
+          <div className="last:mb-0 p-4 lg:p-6">
             {post.articleContent.raw.children.map(
               (content: any, contentIndex: number) => {
                 const children = content.children.map(
@@ -90,12 +94,7 @@ const ArticleDetails: NextPage = ({
           </div>
         </article>
 
-        <aside className="lg:col-span-1 place-self-center bg-gray-700 text-white p-4 rounded-xl">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
-          repellendus molestias aspernatur amet beatae esse nostrum accusamus,
-          eius, deserunt consectetur, repellat laboriosam doloribus hic!
-          Architecto iusto repellat voluptatum nam optio.
-        </aside>
+        <RecentArticles recentArticles={recentArticles} />
       </section>
     </>
   );

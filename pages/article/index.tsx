@@ -1,7 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 
-import { CmsArticle } from "@components/Article";
+import { CmsArticleLists } from "@components/Article";
 import { getArticles } from "app/services";
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -31,7 +31,7 @@ const Article: NextPage = ({
               key={post.articleID}
               className="bg-gray-200 p-2 py-4 sm:p-2.5 sm:py-5 md:p-4 lg:p-6 xl:p-8 md:rounded-lg 2xl:rounded-xl w-full"
             >
-              <CmsArticle post={post} />
+              <CmsArticleLists post={post} />
             </article>
           );
         })}

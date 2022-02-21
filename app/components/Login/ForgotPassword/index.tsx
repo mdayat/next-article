@@ -14,7 +14,7 @@ const ForgotPassword = ({ setForgotPassword }: ForgotPasswordProps) => {
           Forgot your password?
         </h2>
 
-        <p className="font-poppins font-bold text-white italic text-center text-xs lg:text-sm">
+        <p className="font-poppins text-white italic text-center text-xs lg:text-sm">
           Please enter your registered email. We will send you a link to update
           your password
         </p>

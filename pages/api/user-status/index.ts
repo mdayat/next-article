@@ -8,8 +8,6 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const cookie = req.cookies.auth;
 
-  console.log(req.query);
-
   try {
     jwt.verify(cookie, process.env.JWT_SECRET as Secret | GetPublicKeyOrSecret);
 

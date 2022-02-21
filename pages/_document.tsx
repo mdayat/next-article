@@ -12,7 +12,7 @@ function Document() {
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins&family=Roboto&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap"
           rel="stylesheet"
         />
       </Head>

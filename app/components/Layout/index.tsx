@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <Navbar />
 
-      <main>{children}</main>
+      <main className="bg-gray-700">{children}</main>
 
       <Footer />
     </>
