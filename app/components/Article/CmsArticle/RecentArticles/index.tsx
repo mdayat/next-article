@@ -12,7 +12,7 @@ const RecentArticles = ({ recentArticles }: any) => {
         {recentArticles.map((post: any) => {
           return (
             <li
-              className="hover:bg-gray-300 py-2 px-2 rounded-lg mt-2 first:mt-0"
+              className="hover:bg-gray-300 duration-300 ease-in-out py-2 px-2 rounded-lg mt-2 first:mt-0"
               key={post.articleID}
             >
               <Link href={`/article/${post.articleSlug}`} prefetch={false}>

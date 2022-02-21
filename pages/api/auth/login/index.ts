@@ -46,7 +46,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       "Set-Cookie",
       cookie.serialize("auth", token, {
         httpOnly: true,
-        sameSite: "strict",
         secure: process.env.NODE_ENV !== "development",
         maxAge: maxAgeDuration,
         path: "/",

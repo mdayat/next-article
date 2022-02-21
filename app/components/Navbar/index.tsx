@@ -16,9 +16,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const userStatusHandler = async () => {
-      const { data } = await axios.get(
-        "https://next-article-j9sorwru7-mdayat.vercel.app/api/user-status"
-      );
+      const { data } = await axios.get("/api/user-status");
 
       setUserStatus(data);
 
@@ -41,7 +39,7 @@ const Navbar = () => {
 
         <ul className="hidden md:flex justify-between items-center">
           {userStatus === "SUCCEED" && (
-            <li className="font-poppins font-bold uppercase text-sm lg:text-base 3xl:text-xl">
+            <li className="font-poppins font-bold text-white hover:text-gray-200 duration-300 ease-in-out uppercase ease text-sm lg:text-base 3xl:text-xl">
               <Link href="/article" prefetch={false}>
                 <a>Articles</a>
               </Link>
@@ -53,7 +51,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={logout}
-                className="block font-poppins rounded-md bg-blue-600 hover:bg-blue-700 text-white duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl"
+                className="block font-poppins rounded-md border-2 border-blue-600 hover:bg-blue-600 hover:border-transparent text-white duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl"
               >
                 Log out
               </button>
@@ -61,7 +59,7 @@ const Navbar = () => {
           ) : (
             <li>
               <Link href="/auth/login">
-                <a className="block font-poppins rounded-md bg-blue-600 hover:bg-blue-700 text-white duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl">
+                <a className="block font-poppins rounded-md border-2 border-blue-600 hover:bg-blue-600 hover:border-transparent text-white duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl">
                   Sign in
                 </a>
               </Link>
@@ -76,10 +74,10 @@ const Navbar = () => {
           onClick={() => (showNav ? setShowNav(false) : setShowNav(true))}
         >
           <i>
-            {showNav && <CloseIcon className="w-[14px] fill-gray-800" />}
+            {showNav && <CloseIcon className="w-[14px] fill-white" />}
 
             <BarsIcon
-              className={`${showNav && "hidden"} w-[14px] fill-gray-800`}
+              className={`${showNav && "hidden"} w-[14px] fill-white`}
             />
           </i>
         </button>
@@ -92,7 +90,7 @@ const Navbar = () => {
           }`}
         >
           {userStatus === "SUCCEED" && (
-            <li className="w-full font-poppins font-bold text-center uppercase mt-4 text-sm sm:text-base">
+            <li className="w-full font-poppin font-bold text-white hover:text-gray-200 text-center uppercase mt-4 text-sm sm:text-base">
               <Link href="/article" prefetch={false}>
                 <a>Articles</a>
               </Link>
@@ -104,7 +102,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={logout}
-                className="block font-poppins text-center rounded-md select-none py-1.5 bg-gray-600 text-white hover:bg-gray-700 duration-300 ease-in-out w-full sm:w-[90vw] mx-auto text-sm sm:text-base"
+                className="block font-poppins text-center rounded-md select-none py-1.5 border-2 border-blue-600 hover:bg-blue-600 hover:border-transparent duration-300 ease-in-out text-white w-full sm:w-[90vw] mx-auto text-sm sm:text-base"
               >
                 Log out
               </button>
@@ -113,7 +111,7 @@ const Navbar = () => {
             <li className="pb-6 w-full sm:w-[90vw] mx-auto">
               <Link href="/auth/login">
                 <a
-                  className={`block font-poppins text-center rounded-md select-none py-1.5 bg-gray-600 text-white hover:bg-gray-700 duration-300 ease-in-out text-sm sm:text-base`}
+                  className={`block font-poppins text-center rounded-md select-none py-1.5 border-2 border-blue-600 hover:bg-blue-600 hover:border-transparent duration-300 ease-in-out text-white text-sm sm:text-base`}
                 >
                   Sign in
                 </a>
