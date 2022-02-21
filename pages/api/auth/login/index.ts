@@ -23,14 +23,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (!user) {
-      throw new Error("Failed");
+      throw new Error("FAILED");
     }
 
     const comparePassword =
       user?.password && (await bcrypt.compare(password, user.password));
 
     if (!comparePassword) {
-      throw new Error("Failed");
+      throw new Error("FAILED");
     }
 
     const token = jwt.sign(

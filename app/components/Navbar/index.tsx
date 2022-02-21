@@ -16,7 +16,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const userStatusHandler = async () => {
-      const { data } = await axios.get("http://localhost:3000/api/user-status");
+      const { data } = await axios.get(
+        "https://next-article-j9sorwru7-mdayat.vercel.app/api/user-status"
+      );
 
       setUserStatus(data);
 
@@ -27,11 +29,11 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-gray-200 fixed top-0 left-0 right-0 z-10">
+    <nav className="bg-gray-700 fixed top-0 left-0 right-0 z-10">
       <div className="w-11/12 mx-auto h-20 flex justify-between items-center">
         <h2>
           <Link href="/">
-            <a className="block font-bold uppercase font-patrickHand sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-6xl">
+            <a className="block text-white font-bold uppercase font-patrickHand sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-6xl">
               Company
             </a>
           </Link>
@@ -51,7 +53,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={logout}
-                className="block font-poppins rounded-md bg-gray-600 text-white hover:bg-gray-700 duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl"
+                className="block font-poppins rounded-md bg-blue-600 hover:bg-blue-700 text-white duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl"
               >
                 Log out
               </button>
@@ -59,7 +61,7 @@ const Navbar = () => {
           ) : (
             <li>
               <Link href="/auth/login">
-                <a className="block font-poppins rounded-md bg-gray-600 text-white hover:bg-gray-700 duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl">
+                <a className="block font-poppins rounded-md bg-blue-600 hover:bg-blue-700 text-white duration-300 ease-in-out py-1.5 px-3 md:ml-8 lg:ml-10 2xl:ml-12 3xl:ml-14 md:text-sm lg:text-base 3xl:text-xl">
                   Sign in
                 </a>
               </Link>
