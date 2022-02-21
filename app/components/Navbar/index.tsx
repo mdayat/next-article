@@ -16,9 +16,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const userStatusHandler = async () => {
-      const { data } = await axios.get(
-        "https://next-article-j9sorwru7-mdayat.vercel.app/api/user-status"
-      );
+      const { data } = await axios.get("/api/user-status");
 
       setUserStatus(data);
 
