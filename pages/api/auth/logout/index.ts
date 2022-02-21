@@ -3,7 +3,7 @@ import cookie from "cookie";
 
 import { apiAuthCheck } from "app/utils";
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
     res.status(405).end();
   }

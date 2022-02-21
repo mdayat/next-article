@@ -1,22 +1,37 @@
-import { NextPage } from "next";
+import { ReactElement } from "react";
 import Head from "next/head";
+import Image from "next/image";
 
 import { LoginForm } from "@components/Login";
 
-const LoginPage: NextPage = () => {
+import LoginImage from "@images/login.jpeg";
+
+const LoginPage = () => {
   return (
-    <div className="min-h-screen grid bg-gradient-to-r from-blue-600 to-blue-400">
+    <section className="h-screen bg-gray-700 grid lg:grid-cols-7">
       <Head>
         <title>Login Page</title>
+        <meta name="description" content="Next JS Article Login Page" />
       </Head>
 
-      <h1 className="hidden lg:block font-patrickHand text-white lg:text-4xl xl:text-5xl 2xl-6xl 3xl:text-7xl place-self-center row-span-1">
-        Explore and grasp the world with Company articles
-      </h1>
+      <figure className="relative h-screen col-span-4 hidden lg:block">
+        <Image
+          src={LoginImage}
+          alt="Login Image"
+          placeholder="blur"
+          objectFit="cover"
+          objectPosition="left center"
+          layout="fill"
+        />
+      </figure>
 
       <LoginForm />
-    </div>
+    </section>
   );
 };
 
 export default LoginPage;
+
+LoginPage.getLayout = function getLayout(page: ReactElement) {
+  return <>{page}</>;
+};

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import Image from "next/image";
 
 import { useAuth } from "app/hooks";
 import { DataForm } from "./DataForm";
 import { ForgotPassword } from "./ForgotPassword";
-
-import IsoflatIcon from "@icons/isoflat.svg";
 
 const LoginForm = () => {
   const { login, loginStatus } = useAuth();
@@ -32,11 +29,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="grid lg:grid-cols-2 m-auto lg:pb-36 lg:w-[90vw] xl:w-[75vw] 2xl:w-[60vw] 3xl:w-[55vw]">
-      <figure className="hidden lg:block">
-        <Image src={IsoflatIcon} alt="IsoFlatIcon" />
-      </figure>
-
+    <div className="col-span-3 grid place-items-center">
       {forgotPassword ? (
         <ForgotPassword setForgotPassword={setForgotPassword} />
       ) : (

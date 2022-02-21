@@ -1,6 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { FaUser, FaLock, FaEyeSlash, FaEye } from "react-icons/fa";
+
+import UserIcon from "@icons/user-solid.svg";
+import LockIcon from "@icons/lock-solid.svg";
+import EyeIcon from "@icons/eye-solid.svg";
+import EyeSlashIcon from "@icons/eye-slash-solid.svg";
 
 interface LoginFormProps {
   rememberMe: boolean;
@@ -25,12 +29,12 @@ const DataForm = ({
 
   return (
     <form
-      className="w-[90vw] sm:w-[70vw] md:w-[55vw] lg:w-full h-fit place-self-center rounded-lg p-4 bg-white"
+      className="w-full px-2 sm:px-6 md:px-10"
       method="POST"
       onSubmit={submitForm}
     >
       <fieldset>
-        <h2 className="text-blue-600 font-poppins font-bold text-center mb-6 text-base lg:text-lg lg:mb-8">
+        <h2 className="text-white font-poppins font-bold text-center mb-6 text-base lg:text-lg lg:mb-8">
           Login to read more articles
         </h2>
       </fieldset>
@@ -39,7 +43,7 @@ const DataForm = ({
         <fieldset>
           <label
             htmlFor="error"
-            className="block text-red-500 font-poppins font-bold italic text-xs mb-2 text-center lg:text-sm lg:mb-3 2xl:mb-4 3xl:text-base animate-pulse"
+            className="block text-red-400 font-poppins font-bold italic text-xs mb-2 text-center lg:text-sm lg:mb-3 2xl:mb-4 3xl:text-base animate-pulse"
           >
             Username or Password doesn&apos;t match
           </label>
@@ -48,7 +52,7 @@ const DataForm = ({
 
       <fieldset className="flex justify-between items-center mb-3.5 lg:mb-6">
         <i>
-          <FaUser className="text-blue-600 self-center" />
+          <UserIcon className="fill-blue-600 w-[16px]" />
         </i>
 
         <input
@@ -66,7 +70,7 @@ const DataForm = ({
 
       <fieldset className="flex justify-between items-center mb-3.5 lg:mb-6">
         <i>
-          <FaLock className="text-blue-600 self-center" />
+          <LockIcon className="fill-blue-600 w-[16px]" />
         </i>
 
         <div className="relative w-[calc(100%-10%)] text-right flex items-center">
@@ -83,18 +87,19 @@ const DataForm = ({
 
           <button
             type="button"
+            aria-label="Show and hidden password"
             className="absolute right-[12px]"
             onClick={() =>
               showPassword ? setShowPassword(false) : setShowPassword(true)
             }
           >
             {showPassword ? (
-              <i className="text-sm lg:text-base">
-                <FaEye />
+              <i>
+                <EyeIcon className="fill-gray-800 w-[16px]" />
               </i>
             ) : (
-              <i className="text-sm lg:text-base">
-                <FaEyeSlash />
+              <i>
+                <EyeSlashIcon className="fill-gray-800 w-[16px]" />
               </i>
             )}
           </button>
@@ -116,7 +121,7 @@ const DataForm = ({
 
           <label
             htmlFor="rememberMe"
-            className="font-poppins text-blue-600 flex items-center select-none cursor-pointer text-xs xl:text-sm"
+            className="font-poppins text-white flex items-center select-none cursor-pointer text-xs xl:text-sm"
           >
             Remember me
           </label>
@@ -124,7 +129,7 @@ const DataForm = ({
 
         <button
           type="button"
-          className="font-poppins text-blue-600 hover:underline duration-300 ease-in-out text-xs xl:text-sm"
+          className="font-poppins text-white hover:underline duration-300 ease-in-out text-xs xl:text-sm"
           onClick={() => setForgotPassword(true)}
         >
           Forgot password?
@@ -134,7 +139,7 @@ const DataForm = ({
       <fieldset className="grid place-items-center">
         <button
           type="submit"
-          className="w-full font-poppins bg-blue-600 text-white font-bold py-1 rounded-md hover:bg-blue-700 duration-300 ease-in-out drop-shadow-xl text-sm xl:text-base"
+          className="w-full font-poppins border-2 border-blue-600 text-white font-bold py-1 rounded-md hover:bg-blue-600 hover:border-transparent hover:text-white duration-300 ease-in-out text-sm xl:text-base"
         >
           Sign In
         </button>

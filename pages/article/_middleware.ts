@@ -17,4 +17,4 @@ const middleware = (req: NextRequest) => {
   }
 };
 
-export { middleware };
+export default middleware;
